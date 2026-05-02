@@ -39,3 +39,6 @@ You can find the collection of avatars I use on my Pinterest profile:
    * Open the `scookie.txt` file in the project folder and paste the cookies inside.
 4. **Run:**
    * Run `exec.bat` to see the logs or `silent.vbs` to run it in the background (invisible).
+<p align="center">
+  <img src="https://i.imgur.com/SCxy7Ob.gif" alt="SAAC Banner" width="100%">
+</p>
