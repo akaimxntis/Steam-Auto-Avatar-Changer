@@ -2,15 +2,15 @@ import requests
 import os
 import random
 
-# --- SETTINGS ---
-COOKIES_FILE = 'scookie.txt' 
-PHOTOS_PATH = r'C:\Path\To\Profile\Pictures\'
+# --- CONFIGURAÇÕES ---
+ARQUIVO_COOKIES = 'scookie.txt' 
+CAMINHO_FOTOS = r'C:\Caminho\para\Fotos\de_Perfil\'
 # ---------------------
 
-def load_cookies(path):
+def carregar_cookies(caminho):
     cookies = {}
-    if not os.path.exists(path): return None
-    with open(path, 'r', encoding='utf-8') as f:
+    if not os.path.exists(caminho): return None
+    with open(caminho, 'r', encoding='utf-8') as f:
         for line in f:
             if not line.startswith('#') and line.strip():
                 parts = line.split('\t')
@@ -18,49 +18,46 @@ def load_cookies(path):
                     cookies[parts[5].strip()] = parts[6].strip()
     return cookies
 
-def fetch_profile_data(session, steam_id):
-    """Returns (URL_ID, Nickname)"""
-    url_id = steam_id
-    nickname = steam_id
+def capturar_dados_perfil(session, steam_id):
+    """Retorna (ID_da_URL, Nome_Nick)"""
+    id_url = steam_id
+    nick = steam_id
     try:
         res = session.get(f"https://steamcommunity.com/profiles/{steam_id}/", timeout=5)
         if res.status_code == 200:
-            # Captures URL ID (e.g., akaimxntis)
+            # Captura o ID da URL (ex: akaimxntis)
             if 'rel="canonical" href="https://steamcommunity.com/id/' in res.text:
-                url_id = res.text.split('id/')[1].split('/')[0].strip()
+                id_url = res.text.split('id/')[1].split('/')[0].strip()
             
-            # Captures Nickname (e.g., ᴉɐʞⱯ)
+            # Captura o Nick (ex: ᴉɐʞⱯ)
             if 'actual_persona_name">' in res.text:
-                nickname = res.text.split('actual_persona_name">')[1].split('</span>')[0].strip()
+                nick = res.text.split('actual_persona_name">')[1].split('</span>')[0].strip()
     except:
         pass
-    return url_id, nickname
+    return id_url, nick
 
-def change_steam_photo():
-    cookies_dict = load_cookies(COOKIES_FILE)
-    if not cookies_dict:
-        print("❌ Error: Cookies file not found.")
+def mudar_foto_steam():
+    dict_cookies = carregar_cookies(ARQUIVO_COOKIES)
+    if not dict_cookies:
+        print("❌ Erro: Arquivo de cookies não encontrado.")
         return
 
-    steam_id_64 = cookies_dict.get('steamLoginSecure', '').split('%7C%7C')[0]
-    sess_id = cookies_dict.get('sessionid')
+    steam_id_64 = dict_cookies.get('steamLoginSecure', '').split('%7C%7C')[0]
+    sess_id = dict_cookies.get('sessionid')
 
     session = requests.Session()
-    for name, value in cookies_dict.items():
+    for name, value in dict_cookies.items():
         session.cookies.set(name, value, domain='steamcommunity.com')
 
-    # Automatically fetches both names
-    display_id, profile_name = fetch_profile_data(session, steam_id_64)
+    # Puxa os dois nomes automaticamente
+    id_exibicao, nome_perfil = capturar_dados_perfil(session, steam_id_64)
 
-    photos = [f for f in os.listdir(PHOTOS_PATH) if f.endswith(('.png', '.jpg', '.jpeg'))]
-    if not photos: 
-        print("❌ No images found in the directory.")
-        return
-        
-    chosen_photo = os.path.join(PHOTOS_PATH, random.choice(photos))
+    fotos = [f for f in os.listdir(CAMINHO_FOTOS) if f.endswith(('.png', '.jpg', '.jpeg'))]
+    if not fotos: return
+    foto_escolhida = os.path.join(CAMINHO_FOTOS, random.choice(fotos))
 
-    print(f"👤 Identified user: {display_id}")
-    print(f"📸 Photo: {os.path.basename(chosen_photo)}")
+    print(f"👤 Usuário identificado: {id_exibicao}")
+    print(f"📸 Foto: {os.path.basename(foto_escolhida)}")
     
     payload = {
         "MAX_FILE_SIZE": "1048576",
@@ -70,22 +67,20 @@ def change_steam_photo():
         "doSub": "1"
     }
 
-    headers = {
-        "User-Agent": "Mozilla/5.0", 
-        "Referer": f"https://steamcommunity.com/profiles/{steam_id_64}/edit/avatar"
-    }
+    headers = {"User-Agent": "Mozilla/5.0", "Referer": f"https://steamcommunity.com/profiles/{steam_id_64}/edit/avatar"}
 
     try:
-        with open(chosen_photo, 'rb') as f:
-            files = {'avatar': (os.path.basename(chosen_photo), f, 'image/jpeg')}
+        with open(foto_escolhida, 'rb') as f:
+            files = {'avatar': (os.path.basename(foto_escolhida), f, 'image/jpeg')}
             response = session.post("https://steamcommunity.com/actions/FileUploader/", data=payload, files=files, headers=headers)
             
         if response.status_code == 200 and "error" not in response.text.lower():
-            print(f"✅ Success! {profile_name}'s photo has been changed.")
+            # --- SEU SEGUNDO PRINT ESPECÍFICO ---
+            print(f"✅ Sucesso! Foto de {nome_perfil} alterada.")
         else:
-            print(f"❌ Upload failed for {display_id}.")
+            print(f"❌ Falha no upload para {id_exibicao}.")
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"❌ Erro: {e}")
 
 if __name__ == "__main__":
-    change_steam_photo()
+    mudar_foto_steam()
