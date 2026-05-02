@@ -1,3 +1,9 @@
 Set WshShell = CreateObject("WScript.Shell")
-WshShell.Run "cmd /c exec.bat", 0
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+strPath = fso.GetParentFolderName(WScript.ScriptFullName)
+
+WshShell.Run Chr(34) & strPath & "\exec.bat" & Chr(34), 0
+
 Set WshShell = Nothing
+Set fso = Nothing
