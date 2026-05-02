@@ -27,19 +27,6 @@ Este projeto foi otimizado para acesso rápido e automação:
 Você pode encontrar a coleção de avatares que eu utilizo no meu perfil do Pinterest:
 *   **Pinterest:** [akaimxntis](https://www.pinterest.com/akaimxntis/) > [1:1](https://br.pinterest.com/Akaimxntis/11/)
 
-## Siga estes passos para configurar o **SAAC** no seu PC:
-
-1. **Caminho dos Avatares:**
-   * Abra o arquivo `SAAC.py` (pode usar o Bloco de Notas).
-   * Localize a linha `CAMINHO_FOTOS` e coloque o caminho da sua pasta de fotos de perfil entre as aspas, mantendo o `r` antes delas (ex: `r'C:\Fotos\Avatares\'`).
-2. **Obter Cookies:**
-   * No seu navegador (Chrome, Edge ou Firefox), instale uma extensão de gerenciamento de cookies (ex: **Cookie-Editor**).
-   * Acesse o site da **Steam**, faça login, vá no seu perfil e use a extensão para copiar ou exportar os valores em Netscape (.txt).
-3. **Configurar scookie.txt:**
-   * Abra o arquivo `scookie.txt` na pasta do projeto e cole os cookies lá dentro.
-4. **Iniciar:**
-   * Execute o `exec.bat` para ver o log ou o `silent.vbs` para rodar em segundo plano (invisível).# Steam Auto Avatar Changer 📸
-
 Um script em Python para alterar automaticamente sua foto de perfil da Steam selecionando uma imagem aleatória de uma pasta local.
 
 ## 🚀 Funcionalidades
@@ -66,3 +53,16 @@ Este projeto foi otimizado para acesso rápido e automação:
 ## 📸 Onde encontrar avatares
 Você pode encontrar a coleção de avatares que eu utilizo no meu perfil do Pinterest:
 *   **Pinterest:** [akaimxntis](https://www.pinterest.com/akaimxntis/) > [1:1](https://br.pinterest.com/Akaimxntis/11/)
+
+## Siga estes passos para configurar o **SAAC** no seu PC:
+
+1. **Caminho dos Avatares:**
+   * Abra o arquivo `SAAC.py` (pode usar o Bloco de Notas).
+   * Localize a linha `CAMINHO_FOTOS` e coloque o caminho da sua pasta de fotos de perfil entre as aspas, mantendo o `r` antes delas (ex: `r'C:\Fotos\Avatares\'`).
+2. **Obter Cookies:**
+   * No seu navegador (Chrome, Edge ou Firefox), instale uma extensão de gerenciamento de cookies (ex: **Cookie-Editor**).
+   * Acesse o site da **Steam**, faça login, vá no seu perfil e use a extensão para copiar ou exportar os valores em Netscape (.txt).
+3. **Configurar scookie.txt:**
+   * Abra o arquivo `scookie.txt` na pasta do projeto e cole os cookies lá dentro.
+4. **Iniciar:**
+   * Execute o `exec.bat` para ver o log ou o `silent.vbs` para rodar em segundo plano (invisível).# Steam Auto Avatar Changer 📸
