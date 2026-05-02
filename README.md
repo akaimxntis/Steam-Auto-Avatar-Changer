@@ -65,7 +65,8 @@ Você pode encontrar a coleção de avatares que eu utilizo no meu perfil do Pin
 3. **Configurar scookie.txt:**
    * Abra o arquivo `scookie.txt` na pasta do projeto e cole os cookies lá dentro.
 4. **Iniciar:**
-   * Execute o `exec.bat` para ver o log ou o `silent.vbs` para rodar em segundo plano (invisível).# Steam Auto Avatar Changer 📸
+   * Execute o `exec.bat` para ver o log ou o `silent.vbs` para rodar em segundo plano (invisível).
+
 <p align="center">
   <img src="https://i.imgur.com/SCxy7Ob.gif" alt="SAAC Banner" width="100%">
 </p>
