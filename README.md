@@ -22,3 +22,7 @@ This project is optimized for quick access and automation:
 *   **Raycast:** You can link the `silent.vbs` to a Raycast "Quicklink" or script command for instant execution via keyboard shortcuts.
 *   **Unified Remote:** By pointing a custom button to the `exec.bat` or `silent.vbs`, you can trigger a random avatar change directly from your smartphone.
 *   **Silent Mode:** The use of VBScript ensures that the update happens in the background without interrupting your gaming or workflow.
+
+## 📸 Where to find avatars
+You can find the collection of avatars I use on my Pinterest profile:
+*   **Pinterest:** [akaimxntis](https://www.pinterest.com/akaimxntis/) > [1:1](https://br.pinterest.com/Akaimxntis/11/)
