@@ -31,7 +31,7 @@ You can find the collection of avatars I use on my Pinterest profile:
 
 1. **Avatars Path:**
    * Open the `SAAC.py` file (you can use Notepad).
-   * Locate the line PHOTO_PATH and place the path to your profile picture folder between the quotation marks, keeping the 'r' before them (e.g., r'C:\Photos\Avatars\').
+   * Locate the line PHOTOS_PATH and place the path to your profile picture folder between the quotation marks, keeping the 'r' before them (e.g., r'C:\Photos\Avatars\').
 2. **Get Cookies:**
    * In your browser (Chrome, Edge, or Firefox), install a cookie management extension (e.g., **Cookie-Editor**).
    * Access the Steam website, log in, go to your profile, and use the extension to copy or export the values ​​in Netscape (.txt).
