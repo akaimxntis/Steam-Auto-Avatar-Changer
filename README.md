@@ -64,8 +64,7 @@ Você pode encontrar a coleção de avatares que eu utilizo no meu perfil do Pin
 SAAC/
 ├── SAAC.py          # Script principal traduzido
 ├── config.json      # Configuração de caminhos
-├── scookie.txt      # Cookies da sessão Steam (Mantenha privado!)
-└── saac.log         # Log de execução (opcional)
+└── scookie.txt      # Cookies da sessão Steam (Mantenha privado!)
 ```
 
 ## 🔒 Segurança
