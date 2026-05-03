@@ -78,7 +78,7 @@ SAAC/
 ### Unified Remote (Smartphone)
 No seu arquivo `remote.lua`, utilize a função `shell.execute` para rodar de forma invisível:
 ```lua
-shell.execute("pythonw.exe", "\"C:\\Caminho\\Para\\O\Projeto\\SAAC.py\"")
+shell.execute("pythonw.exe", "\"C:\\Caminho\\Para\\O_Projeto\\SAAC.py\"")
 ```
 
 ## 🐛 Solução de Problemas
