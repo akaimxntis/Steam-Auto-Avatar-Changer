@@ -1,5 +1,3 @@
----
-
 # Steam Auto Avatar Changer 📸
 
 Um script Python para mudar automaticamente sua foto de perfil do Steam, selecionando uma imagem aleatória de uma pasta local.
