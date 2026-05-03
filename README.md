@@ -1,7 +1,3 @@
-Aqui está o seu `README.md` traduzido para o inglês, com os caminhos genéricos e sem as marcações de citação:
-
----
-
 # Steam Auto Avatar Changer 📸
 
 A Python script to automatically change your Steam profile picture by selecting a random image from a local folder.
