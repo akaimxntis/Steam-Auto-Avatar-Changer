@@ -217,7 +217,7 @@ def change_steam_photo():
     log_only("Starting Steam Auto Avatar Changer")
     log_only("=" * 60)
     
-    print_console("Starting Steam Auto Avatar Changer")
+    print_console("[Starting Steam Auto Avatar Changer]".center(os.get_terminal_size().columns))
     
     config = load_config()
     photos_path = config.get('photos_path')
