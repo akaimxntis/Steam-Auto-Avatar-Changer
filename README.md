@@ -30,6 +30,8 @@ pip install requests
 2.  Go to [steamcommunity.com](https://steamcommunity.com) and log in.
 3.  Use the extension to **export cookies in Netscape format (.txt)**.
 4.  Save the content as **`scookie.txt`** in the script folder.
+> [!TIP]
+> Use [Get cookies.txt LOCALLY - Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) pr [Get Cookies - Firefox](https://addons.mozilla.org/pt-BR/firefox/addon/get_cookies/))
 
 ### 2. **Configure Photo Path**
 
