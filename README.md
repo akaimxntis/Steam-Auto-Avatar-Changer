@@ -46,10 +46,7 @@ python SAAC.py
 ```
 
 ### Modo Silencioso (Background no Windows)
-Para rodar sem abrir janelas de terminal, utilize o `pythonw`:
-```bash
-pythonw.exe "C:\Caminho\Para\O\Projeto\SAAC.py"
-```
+Para rodar sem abrir janelas de terminal, utilize o `silent.vbs`
 
 ## 📸 Onde encontrar avatares
 
