@@ -1,7 +1,5 @@
 # [Steam Auto Avatar Changer]
 
-## 📥 [Download](https://github.com/akaimxntis/Steam-Auto-Avatar-Changer/releases/tag/PTBR)
-
 Um script Python para mudar automaticamente sua foto de perfil do Steam, selecionando uma imagem aleatória de uma pasta local.
 
 ## 🚀 Características
