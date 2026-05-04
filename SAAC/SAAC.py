@@ -463,7 +463,7 @@ def upload_avatar_with_retry(session, upload_data, files, headers, steam_id_64, 
 
 def load_config():
     default_config = {
-        "photos_path": str(Path.home() / "Pictures")
+        "caminho_fotos": str(Path.home() / "Pictures")
     }
     
     if os.path.exists(CONFIG_FILE):
@@ -471,7 +471,7 @@ def load_config():
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
                 content = f.read()
                 config = json.loads(content)
-                log_only(f"Configuração carregada: {config.get('photos_path')}")
+                log_only(f"Configuração carregada: {config.get('caminho_fotos')}")
                 return config
         except Exception as e:
             log_only(f"Erro ao ler {CONFIG_FILE}: {e}", 'error')
@@ -479,7 +479,7 @@ def load_config():
             return default_config
     else:
         save_config(default_config)
-        log_only(f"{CONFIG_FILE} criado com path padrão: {default_config['photos_path']}")
+        log_only(f"{CONFIG_FILE} criado com path padrão: {default_config['caminho_fotos']}")
         print_console(f"[!] {CONFIG_FILE} criado. Configure o caminho das fotos nele.")
         return default_config
 
@@ -543,14 +543,14 @@ def change_steam_photo():
     print_console("[Iniciando Steam Auto Avatar Changer]".center(os.get_terminal_size().columns))
     
     config = load_config()
-    photos_path = config.get('photos_path')
+    caminho_fotos = config.get('caminho_fotos')
     
-    print(f"\n🔍 Procurando fotos em: {photos_path}")
-    log_only(f"Procurando fotos em: {photos_path}")
+    print(f"\n🔍 Procurando fotos em: {caminho_fotos}")
+    log_only(f"Procurando fotos em: {caminho_fotos}")
     
-    if not os.path.isdir(photos_path):
-        print(f"❌ Diretório não encontrado: {photos_path}")
-        log_only(f"Diretório não encontrado: {photos_path}", 'error')
+    if not os.path.isdir(caminho_fotos):
+        print(f"❌ Diretório não encontrado: {caminho_fotos}")
+        log_only(f"Diretório não encontrado: {caminho_fotos}", 'error')
         return False
     
     dict_cookies = load_cookies(COOKIES_FILE)
@@ -576,7 +576,7 @@ def change_steam_photo():
     display_id, profile_name = fetch_profile_data(session, steam_id_64)
     
     try:
-        photos = [f for f in os.listdir(photos_path) if f.endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))]
+        photos = [f for f in os.listdir(caminho_fotos) if f.endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))]
         if not photos:
             print("❌ Nenhuma imagem encontrada no diretório.")
             log_only("Nenhuma imagem encontrada no diretório", 'error')
@@ -585,7 +585,7 @@ def change_steam_photo():
         print_console(f"📊 Encontradas {len(photos)} imagens no diretório")
         log_only(f"Encontradas {len(photos)} imagens no diretório")
         
-        chosen_photo = os.path.join(photos_path, random.choice(photos))
+        chosen_photo = os.path.join(caminho_fotos, random.choice(photos))
         chosen_photo_name = os.path.basename(chosen_photo)
         
         log_only(f"Foto selecionada: {chosen_photo_name}")
