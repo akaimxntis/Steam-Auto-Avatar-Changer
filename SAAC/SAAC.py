@@ -222,7 +222,7 @@ def change_steam_photo():
     config = load_config()
     photos_path = config.get('photos_path')
     
-    print(f"\n🔍 Looking for photos in: {photos_path}")
+    print(f"🔍 Looking for photos in: {photos_path}")
     log_only(f"Looking for photos in: {photos_path}")
     
     if not os.path.isdir(photos_path):
