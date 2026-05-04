@@ -34,7 +34,7 @@ Edit the **`config.json`** file (automatically created on the first run):
 
 ```json
 {
-    "caminho_fotos": "C:\\Path\\To\\Your\\Photos"
+    "caminho_fotos": "C:/Path/To/Your/Photos"
 }
 ```
 
