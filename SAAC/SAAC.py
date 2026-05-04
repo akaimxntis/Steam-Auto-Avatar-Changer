@@ -11,8 +11,8 @@ from datetime import datetime
 CONFIG_FILE = 'config.json'
 COOKIES_FILE = 'scookie.txt'
 LOG_FILE = 'SAAC_audit.log'
-MAX_FILE_SIZE = 1048576
-MAX_RETRIES = 3
+MAX_FILE_SIZE = 2097152
+MAX_RETRIES = 5
 RETRY_DELAY = 2
 
 def setup_logging():
