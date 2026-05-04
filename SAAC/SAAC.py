@@ -136,7 +136,7 @@ def change_steam_photo():
                 timeout=10
             )
         
-        print(f"\nResult: Status Code #{response.status_code}")
+        print(f"\nResult: Code. #{response.status_code}")
         
         if response.status_code == 200:
             res_lower = response.text.lower()
