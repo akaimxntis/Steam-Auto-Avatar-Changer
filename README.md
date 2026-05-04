@@ -72,7 +72,7 @@ SAAC/
 ## 📱 Advanced Automation
 
 ### Raycast (Windows)
-*   **Link:** Create a .vbs shortcut and point to it. Example: `"C:\Path\To\The\Project\silent.vbs- Shortcut.lnk"`.
+*   **Link:** Create a .vbs shortcut and point to it. Example: `"C:\Path\To\The\Project\silent.vbs - Shortcut.lnk"`.
 *   **Open With:** Default (PowerShell is not required).
 
 ### Unified Remote (Smartphone)
