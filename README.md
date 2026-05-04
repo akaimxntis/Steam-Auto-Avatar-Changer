@@ -1,6 +1,6 @@
 # [Steam Auto Avatar Changer]
 
-## 🇧🇷 [PT-BR]([https://github.com/akaimxntis/Steam-Auto-Avatar-Changer/releases/tag/ENGLISH](https://github.com/akaimxntis/Steam-Auto-Avatar-Changer/tree/pt-br)
+## 🇧🇷 [PTBR]([https://github.com/akaimxntis/Steam-Auto-Avatar-Changer/releases/tag/ENGLISH](https://github.com/akaimxntis/Steam-Auto-Avatar-Changer/tree/pt-br)
 
 A Python script to automatically change your Steam profile picture by selecting a random image from a local folder.
 
