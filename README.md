@@ -69,7 +69,7 @@ SAAC/
 ## 📱 Automação Avançada
 
 ### Raycast (Windows)
-*   **Link:** `pythonw.exe "C:\Caminho\Para\O\Projeto\SAAC.py"`.
+*   **Link:** Crie um atalho do .vbs e aponte para ele. Exemplo: `"C:\Caminho\Para\O\Projeto\silent.vbs - Atalho.çnk"`.
 *   **Open With:** Default (não requer PowerShell).
 
 ### Unified Remote (Smartphone)
