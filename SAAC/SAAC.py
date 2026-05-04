@@ -171,19 +171,38 @@ def save_config(config):
 def load_cookies(path):
     cookies = {}
     if not os.path.exists(path):
-        log_only(f"{COOKIES_FILE} not found at {path}", 'error')
+        log_only(f"{COOKIES_FILE} not found in {path}", 'error')
         print_console(f"[!] {COOKIES_FILE} not found.")
         return None
     
     try:
         with open(path, 'r', encoding='utf-8') as f:
-            for line in f:
-                if not line.startswith('#') and line.strip():
-                    parts = line.split('\t')
-                    if len(parts) >= 7:
-                        cookies[parts[5].strip()] = parts[6].strip()
-        
-        log_only(f"Cookies loaded successfully ({len(cookies)} cookies)")
+            content = f.read().strip()
+            
+            # Try reading in Netscape format (with tabs)
+            if '\t' in content or content.startswith('#'):
+                lines = content.split('\n')
+                for line in lines:
+                    if not line.startswith('#') and line.strip():
+                        parts = line.split('\t')
+                        if len(parts) >= 7:
+                            cookies[parts[5].strip()] = parts[6].strip()
+            
+            # Try reading in raw string format (HTTP header)
+            elif '=' in content and ';' in content:
+                # Remove excess spaces and line breaks
+                clean_content = content.replace('\n', '').replace('\r', '')
+                cookie_pairs = clean_content.split(';')
+                for pair in cookie_pairs:
+                    if '=' in pair:
+                        key, value = pair.split('=', 1)
+                        cookies[key.strip()] = value.strip()
+            
+            else:
+                log_only("Unrecognized cookie format.", 'error')
+                return None
+                
+        log_only(f"Cookies successfully loaded ({len(cookies)} cookies)")
         return cookies if cookies else None
     except Exception as e:
         log_only(f"Error loading cookies: {e}", 'error')
